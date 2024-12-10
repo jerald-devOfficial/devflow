@@ -493,6 +493,39 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/eslint-plugin-tailwindcss@npm:^3":
+  version: 3.17.0
+  resolution: "@types/eslint-plugin-tailwindcss@npm:3.17.0"
+  dependencies:
+    "@types/eslint": "npm:*"
+  checksum: 10c0/256c720bab11019fe99fc1a60e8d57221e1d4312f43ae05f9526de61be51050d584f3735ba10765e0cfc70ed318acf25743130f5b4f426412550dd68bc095f37
+  languageName: node
+  linkType: hard
+
+"@types/eslint@npm:*":
+  version: 9.6.1
+  resolution: "@types/eslint@npm:9.6.1"
+  dependencies:
+    "@types/estree": "npm:*"
+    "@types/json-schema": "npm:*"
+  checksum: 10c0/69ba24fee600d1e4c5abe0df086c1a4d798abf13792d8cfab912d76817fe1a894359a1518557d21237fbaf6eda93c5ab9309143dee4c59ef54336d1b3570420e
+  languageName: node
+  linkType: hard
+
+"@types/estree@npm:*":
+  version: 1.0.6
+  resolution: "@types/estree@npm:1.0.6"
+  checksum: 10c0/cdfd751f6f9065442cd40957c07fd80361c962869aa853c1c2fd03e101af8b9389d8ff4955a43a6fcfa223dd387a089937f95be0f3eec21ca527039fd2d9859a
+  languageName: node
+  linkType: hard
+
+"@types/json-schema@npm:*":
+  version: 7.0.15
+  resolution: "@types/json-schema@npm:7.0.15"
+  checksum: 10c0/a996a745e6c5d60292f36731dd41341339d4eeed8180bb09226e5c8d23759067692b1d88e5d91d72ee83dfc00d3aca8e7bd43ea120516c17922cbcb7c3e252db
+  languageName: node
+  linkType: hard
+
 "@types/json5@npm:^0.0.29":
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
@@ -1228,13 +1261,19 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "devflow@workspace:."
   dependencies:
+    "@types/eslint-plugin-tailwindcss": "npm:^3"
     "@types/node": "npm:^20"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
     eslint: "npm:^8"
     eslint-config-next: "npm:15.0.4"
+    eslint-config-prettier: "npm:^9.1.0"
+    eslint-config-standard: "npm:^17.1.0"
+    eslint-plugin-import: "npm:^2.31.0"
+    eslint-plugin-tailwindcss: "npm:^3.17.5"
     next: "npm:15.0.4"
     postcss: "npm:^8"
+    prettier: "npm:^3.4.2"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
     tailwindcss: "npm:^3.4.1"
@@ -1501,6 +1540,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-config-prettier@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "eslint-config-prettier@npm:9.1.0"
+  peerDependencies:
+    eslint: ">=7.0.0"
+  bin:
+    eslint-config-prettier: bin/cli.js
+  checksum: 10c0/6d332694b36bc9ac6fdb18d3ca2f6ac42afa2ad61f0493e89226950a7091e38981b66bac2b47ba39d15b73fff2cd32c78b850a9cf9eed9ca9a96bfb2f3a2f10d
+  languageName: node
+  linkType: hard
+
+"eslint-config-standard@npm:^17.1.0":
+  version: 17.1.0
+  resolution: "eslint-config-standard@npm:17.1.0"
+  peerDependencies:
+    eslint: ^8.0.1
+    eslint-plugin-import: ^2.25.2
+    eslint-plugin-n: "^15.0.0 || ^16.0.0 "
+    eslint-plugin-promise: ^6.0.0
+  checksum: 10c0/d32f37ec4bea541debd3a8c9e05227673a9b1a9977da078195ee55fb371813ddf1349c75f2c33d76699fe3412f1e303181795f146e8d0e546b94fa0dce2bfbf9
+  languageName: node
+  linkType: hard
+
 "eslint-import-resolver-node@npm:^0.3.6, eslint-import-resolver-node@npm:^0.3.9":
   version: 0.3.9
   resolution: "eslint-import-resolver-node@npm:0.3.9"
@@ -1637,6 +1699,18 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
   checksum: 10c0/01c498f263c201698bf653973760f86a07fa0cdec56c044f3eaa5ddaae71c64326015dfa5fde76ca8c5386ffe789fc79932624b614e13b6a1ad789fee3f7c491
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-tailwindcss@npm:^3.17.5":
+  version: 3.17.5
+  resolution: "eslint-plugin-tailwindcss@npm:3.17.5"
+  dependencies:
+    fast-glob: "npm:^3.2.5"
+    postcss: "npm:^8.4.4"
+  peerDependencies:
+    tailwindcss: ^3.4.0
+  checksum: 10c0/9ff1a36fd07f8066474f002bd82c24f1d3910b6ef484a452ec4ba1543b985dc1fde02266a21d458afba02fa404daa88b99cfbad8b4324e5d7bbae5fb1ab535c2
   languageName: node
   linkType: hard
 
@@ -1782,7 +1856,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.3.2":
+"fast-glob@npm:^3.2.5, fast-glob@npm:^3.3.2":
   version: 3.3.2
   resolution: "fast-glob@npm:3.3.2"
   dependencies:
@@ -3281,7 +3355,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8, postcss@npm:^8.4.47":
+"postcss@npm:^8, postcss@npm:^8.4.4, postcss@npm:^8.4.47":
   version: 8.4.49
   resolution: "postcss@npm:8.4.49"
   dependencies:
@@ -3296,6 +3370,15 @@ __metadata:
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
   checksum: 10c0/b00d617431e7886c520a6f498a2e14c75ec58f6d93ba48c3b639cf241b54232d90daa05d83a9e9b9fef6baa63cb7e1e4602c2372fea5bc169668401eb127d0cd
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.4.2":
+  version: 3.4.2
+  resolution: "prettier@npm:3.4.2"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10c0/99e076a26ed0aba4ebc043880d0f08bbb8c59a4c6641cdee6cdadf2205bdd87aa1d7823f50c3aea41e015e99878d37c58d7b5f0e663bba0ef047f94e36b96446
   languageName: node
   linkType: hard
 

@@ -1,3 +1,4 @@
+import MobileNavigation from "@/components/navigation/navbar/MobileNavigation";
 import Theme from "@/components/ui/navigation/navbar/Theme";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,13 +13,18 @@ const Navbar = () => {
           height={23}
           alt="DevFlow Logo"
         />
+
         <p className="h2-bold font-space-grotesk text-dark-100 dark:text-light-900 max-sm:hidden">
           Dev<span className="text-primary-500">Flow</span>
         </p>
       </Link>
+
       <p>Global Search</p>
+
       <div className="flex-between gap-5">
         <Theme />
+
+        <MobileNavigation />
       </div>
     </nav>
   );

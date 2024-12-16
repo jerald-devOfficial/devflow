@@ -1,5 +1,5 @@
 import MobileNavigation from "@/components/navigation/navbar/MobileNavigation";
-import Theme from "@/components/ui/navigation/navbar/Theme";
+import Theme from "@/components/navigation/navbar/Theme";
 import Image from "next/image";
 import Link from "next/link";
 

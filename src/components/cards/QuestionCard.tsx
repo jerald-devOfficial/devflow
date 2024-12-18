@@ -1,8 +1,8 @@
+import Metric from "@/components/Metric";
+import TagCard from "@/components/cards/TagCard";
 import ROUTES from "@/constants/routes";
 import { getTimeStamp } from "@/lib/utils";
 import Link from "next/link";
-import Metric from "../Metric";
-import TagCard from "./TagCard";
 
 interface Props {
   question: Question;

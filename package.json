@@ -18,6 +18,7 @@
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-toast": "^1.2.3",
     "@tailwindcss/typography": "^0.5.15",
+    "bcryptjs": "^2.4.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cm6-theme-basic-dark": "^0.2.0",
@@ -42,6 +43,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2",
     "@types/eslint-plugin-tailwindcss": "^3",
     "@types/node": "^20",
     "@types/react": "^19",

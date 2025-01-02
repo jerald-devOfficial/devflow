@@ -8,19 +8,27 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment } from "react";
 
-const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
+const NavLinks = ({
+  isMobileNav = false,
+  userId,
+}: {
+  isMobileNav?: boolean;
+  userId?: string;
+}) => {
   const pathname = usePathname();
-  const userId = 1;
+
   return (
     <>
       {sidebarLinks.map((item) => {
         const isActive =
           (pathname.includes(item.route) && item.route.length > 1) ||
           pathname === item.route;
+
         if (item.route === "/profile") {
           if (userId) item.route = `${item.route}/${userId}`;
           else return null;
         }
+
         const LinkComponent = (
           <Link
             href={item.route}
@@ -49,6 +57,7 @@ const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
             </p>
           </Link>
         );
+
         return isMobileNav ? (
           <SheetClose asChild key={item.route}>
             {LinkComponent}

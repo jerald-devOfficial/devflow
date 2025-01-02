@@ -3,12 +3,12 @@
 import { signIn } from "@/auth";
 import Account from "@/database/account.model";
 import User from "@/database/user.model";
+import action from "@/lib/handlers/action";
+import handleError from "@/lib/handlers/error";
+import { NotFoundError } from "@/lib/http-errors";
+import { SignInSchema, SignUpSchema } from "@/lib/validations";
 import bcrypt from "bcryptjs";
 import mongoose from "mongoose";
-import action from "../handlers/action";
-import handleError from "../handlers/error";
-import { NotFoundError } from "../http-errors";
-import { SignInSchema, SignUpSchema } from "../validations";
 
 export async function signUpWithCredentials(
   params: AuthCredentials

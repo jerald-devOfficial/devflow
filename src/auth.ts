@@ -1,13 +1,13 @@
+import { IUserDoc } from "@/database/user.model";
+import { SignInSchema } from "@/lib/validations";
 import bcrypt from "bcryptjs";
 import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
-import { IUserDoc } from "./database/user.model";
-import { SignInSchema } from "./lib/validations";
 
+import { IAccountDoc } from "@/database/account.model";
+import { api } from "@/lib/api";
 import Credentials from "next-auth/providers/credentials";
-import { IAccountDoc } from "./database/account.model";
-import { api } from "./lib/api";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [

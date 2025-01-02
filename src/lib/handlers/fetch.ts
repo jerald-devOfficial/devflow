@@ -1,6 +1,6 @@
-import { RequestError } from "../http-errors";
-import logger from "../logger";
-import handleError from "./error";
+import handleError from "@/lib/handlers/error";
+import { RequestError } from "@/lib/http-errors";
+import logger from "@/lib/logger";
 
 interface FetchOptions extends RequestInit {
   timeout?: number;

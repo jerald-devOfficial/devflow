@@ -1,8 +1,10 @@
-import Metric from "@/components/Metric";
-import TagCard from "@/components/cards/TagCard";
+import Link from "next/link";
+
 import ROUTES from "@/constants/routes";
 import { getTimeStamp } from "@/lib/utils";
-import Link from "next/link";
+
+import TagCard from "@/components/cards/TagCard";
+import Metric from "@/components/Metric";
 
 interface Props {
   question: Question;
@@ -18,6 +20,7 @@ const QuestionCard = ({
           <span className="subtle-regular text-dark400_light700 line-clamp-1 flex sm:hidden">
             {getTimeStamp(createdAt)}
           </span>
+
           <Link href={ROUTES.QUESTION(_id)}>
             <h3 className="sm:h3-semibold base-semibold text-dark200_light900 line-clamp-1 flex-1">
               {title}
@@ -25,11 +28,13 @@ const QuestionCard = ({
           </Link>
         </div>
       </div>
+
       <div className="mt-3.5 flex w-full flex-wrap gap-2">
         {tags.map((tag: Tag) => (
           <TagCard key={tag._id} _id={tag._id} name={tag.name} compact />
         ))}
       </div>
+
       <div className="flex-between mt-6 w-full flex-wrap gap-3">
         <Metric
           imgUrl={author.image}
@@ -39,7 +44,9 @@ const QuestionCard = ({
           href={ROUTES.PROFILE(author._id)}
           textStyles="body-medium text-dark400_light700"
           isAuthor
+          titleStyles="max-sm:hidden"
         />
+
         <div className="flex items-center gap-3 max-sm:flex-wrap max-sm:justify-start">
           <Metric
             imgUrl="/icons/like.svg"
@@ -67,4 +74,5 @@ const QuestionCard = ({
     </div>
   );
 };
+
 export default QuestionCard;

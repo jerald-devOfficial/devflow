@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
+import View from "@/app/(root)/questions/view";
 import TagCard from "@/components/cards/TagCard";
 import Preview from "@/components/editor/Preview";
 import Metric from "@/components/Metric";
@@ -8,7 +9,6 @@ import UserAvatar from "@/components/UserAvatar";
 import ROUTES from "@/constants/routes";
 import { getQuestion } from "@/lib/actions/question.action";
 import { formatNumber, getTimeStamp } from "@/lib/utils";
-
 const QuestionDetails = async ({ params }: RouteParams) => {
   const { id } = await params;
 
@@ -18,6 +18,7 @@ const QuestionDetails = async ({ params }: RouteParams) => {
   const { author, createdAt, answers, views, tags, content, title } = question;
   return (
     <>
+      <View questionId={id} />
       <div className="flex-start w-full flex-col">
         <div className="flex w-full flex-col-reverse justify-between">
           <div className="flex items-center justify-start gap-1">

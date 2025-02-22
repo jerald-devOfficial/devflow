@@ -1,8 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { DEFAULT_EMPTY, DEFAULT_ERROR } from "@/constants/states";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
+import { Button } from "@/components/ui/button";
+import { DEFAULT_EMPTY, DEFAULT_ERROR } from "@/constants/states";
 
 interface Props<T> {
   success: boolean;

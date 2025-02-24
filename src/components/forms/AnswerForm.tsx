@@ -3,9 +3,9 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MDXEditorMethods } from "@mdxeditor/editor";
 import { ReloadIcon } from "@radix-ui/react-icons";
+import { useSession } from "next-auth/react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { useSession } from "next-auth/react";
 import { useRef, useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -85,10 +85,13 @@ const AnswerForm = ({ questionId, questionTitle, questionContent }: Props) => {
 
     setIsAISubmitting(true);
 
+    const userAnswer = editorRef.current?.getMarkdown();
+
     try {
       const { success, data, error } = await api.ai.getAnswer(
         questionTitle,
-        questionContent
+        questionContent,
+        userAnswer
       );
 
       if (!success) {

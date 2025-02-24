@@ -15,7 +15,6 @@ import { formatNumber, getTimeStamp } from "@/lib/utils";
 
 const QuestionDetails = async ({ params }: RouteParams) => {
   const { id } = await params;
-
   const { success, data: question } = await getQuestion({ questionId: id });
 
   after(async () => {
@@ -35,9 +34,8 @@ const QuestionDetails = async ({ params }: RouteParams) => {
     filter: "latest",
   });
 
-  console.log("ANSWERS", answersResult);
-
   const { author, createdAt, answers, views, tags, content, title } = question;
+
   return (
     <>
       <div className="flex-start w-full flex-col">
@@ -55,10 +53,12 @@ const QuestionDetails = async ({ params }: RouteParams) => {
               </p>
             </Link>
           </div>
+
           <div className="flex justify-end">
             <p>Votes</p>
           </div>
         </div>
+
         <h2 className="h2-semibold text-dark200_light900 mt-3.5 w-full">
           {title}
         </h2>
@@ -111,7 +111,11 @@ const QuestionDetails = async ({ params }: RouteParams) => {
       </section>
 
       <section className="my-5">
-        <AnswerForm questionId={question._id} />
+        <AnswerForm
+          questionId={question._id}
+          questionTitle={question.title}
+          questionContent={question.content}
+        />
       </section>
     </>
   );

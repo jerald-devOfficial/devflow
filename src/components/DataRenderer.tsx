@@ -4,7 +4,7 @@ import React from "react";
 
 import { DEFAULT_EMPTY, DEFAULT_ERROR } from "@/constants/states";
 
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 interface Props<T> {
   success: boolean;

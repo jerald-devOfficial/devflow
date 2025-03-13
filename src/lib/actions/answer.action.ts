@@ -3,9 +3,9 @@
 import mongoose from "mongoose";
 import { revalidatePath } from "next/cache";
 
-import action from "../handlers/action";
-import handleError from "../handlers/error";
-import { AnswerServerSchema, GetAnswersSchema } from "../validations";
+import action from "@/lib/handlers/action";
+import handleError from "@/lib/handlers/error";
+import { AnswerServerSchema, GetAnswersSchema } from "@/lib/validations";
 
 import ROUTES from "@/constants/routes";
 import { Question } from "@/database";

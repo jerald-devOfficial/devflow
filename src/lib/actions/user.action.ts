@@ -4,9 +4,9 @@ import { FilterQuery } from "mongoose";
 
 import { User } from "@/database";
 
-import action from "../handlers/action";
-import handleError from "../handlers/error";
-import { PaginatedSearchParamsSchema } from "../validations";
+import action from "@/lib/handlers/action";
+import handleError from "@/lib/handlers/error";
+import { PaginatedSearchParamsSchema } from "@/lib/validations";
 
 export async function getUsers(
   params: PaginatedSearchParams
